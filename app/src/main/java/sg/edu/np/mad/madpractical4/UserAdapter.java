@@ -44,11 +44,13 @@ public class UserAdapter extends RecyclerView.Adapter <UserViewHolder> {
        holder.name.setText(user.getName());
        holder.description.setText(user.getDescription());
 
-       if(user.name.endsWith("7")){
+       // Check if username ends with 7 (hide or display view respectively)
+       if(user.getName().endsWith("7")){
            holder.bigImg.setVisibility(View.VISIBLE);
        }
-
-       holder.bigImg.setVisibility(View.GONE);
+       else{
+           holder.bigImg.setVisibility(View.GONE);
+       }
 
        // EventHandling when smallImg is clicked and then display an alertDialog
        holder.smallImg.setOnClickListener(new View.OnClickListener() {
